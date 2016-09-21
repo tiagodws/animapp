@@ -21,44 +21,56 @@ class AnimalNew extends Component {
       <form>
         <h3>Registrando um animal perdido</h3>
 
-        <div className='form-group'>
-          <label>Nome</label>
-          <input type='text' className='form-control' {...name} />
+        <div className='row'>
+          <div className='form-group col-xs-12 col-md-8'>
+            <label>Nome</label>
+            <input type='text' className='form-control' {...name} />
+          </div>
+
+          <div className="col-xs-4" style={"background-color: #000000; height: 50px"}></div>
         </div>
 
-        <div className='form-group'>
-          <label>Raça</label>
-          <input type='text' className='form-control' {...race} />
+        <div className='row'>
+          <div className='form-group col-xs-12 col-md-4'>
+            <label>Animal</label>
+            <input type='text' className='form-control' {...animaltype} />
+          </div>
+
+          <div className='form-group col-xs-12 col-md-2'>
+            <label>Raça</label>
+            <input type='text' className='form-control' {...race} />
+          </div>
+
+          <div className='form-group col-xs-12 col-md-2'>
+            <label>Porte</label>
+            <input type='text' className='form-control' {...size} />
+          </div>
         </div>
 
-        <div className='form-group'>
-          <label>Animal</label>
-          <input type='text' className='form-control' {...animaltype} />
+        <div className='row'>
+          <div className='form-group col-xs-12 col-md-6'>
+            <label>Endereço</label>
+            <input type='text' className='form-control' {...address} />
+          </div>
+
+          <div className='form-group col-xs-12 col-md-2'>
+            <label>Data</label>
+            <input type='text' className='form-control' {...date} />
+          </div>
         </div>
 
-        <div className='form-group'>
-          <label>Porte</label>
-          <input type='text' className='form-control' {...size} />
+        <div className='row'>
+          <div className='form-group col-xs-12 col-md-12'>
+            <label>Caracteristicas</label>
+            <textarea className='form-control' {...caracteristics} />
+          </div>
         </div>
 
-        <div className='form-group'>
-          <label>Endereço</label>
-          <input type='text' className='form-control' {...address} />
-        </div>
-
-        <div className='form-group'>
-          <label>Data</label>
-          <input type='text' className='form-control' {...date} />
-        </div>
-
-        <div className='form-group'>
-          <label>Caracteristicas</label>
-          <textarea className='form-control' {...caracteristics} />
-        </div>
-
-        <div className='form-group'>
-          <label>Condições</label>
-          <textarea className='form-control' {...conditions} />
+        <div className='row'>
+          <div className='form-group col-xs-12 col-md-12'>
+            <label>Condições</label>
+            <textarea className='form-control' {...conditions} />
+          </div>
         </div>
       </form>
     )
