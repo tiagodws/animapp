@@ -39,3 +39,6 @@ jspm_packages
 # Bower
 bower.json
 bower_components
+
+#webstorm
+.idea
