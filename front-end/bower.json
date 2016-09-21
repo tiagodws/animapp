@@ -1,0 +1,21 @@
+{
+  "name": "Animapp",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Matheus Blödorn <blodorn.matheus@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
