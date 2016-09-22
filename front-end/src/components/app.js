@@ -8,7 +8,7 @@ export default class App extends Component {
         <div>
           <MainMenu />
           {this.props.children}
-          </div>
+        </div>
     );
   }
 }

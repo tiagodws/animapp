@@ -20,6 +20,7 @@ export default class MainMenu extends Component{
                     <div className="collapse navbar-collapse" id="menu-principal-collapse">
                         <ul className="nav navbar-nav">
                             <li><Link to={"/"}>Inicio</Link></li>
+                            <li><Link to={"/animal/new"}>Animal</Link></li>
                         </ul>
                     </div>
                 </nav>
