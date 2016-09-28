@@ -21,55 +21,61 @@ class AnimalNew extends Component {
       <form>
         <h3>Registrando um animal perdido</h3>
 
-        <div className='row'>
-          <div className='form-group col-xs-12 col-md-8'>
-            <label>Nome</label>
-            <input type='text' className='form-control' {...name} />
+        <div className='box col-xs-12 col-md-8'>
+          <div className='row'>
+            <div className='form-group col-xs-12 col-md-12'>
+              <label>Nome</label>
+              <input type='text' className='form-control' {...name} />
+            </div>
           </div>
 
-          <div className="col-xs-4" style={"background-color: #000000; height: 50px"}></div>
-        </div>
+          <div className='row'>
+            <div className='form-group col-xs-12 col-md-6'>
+              <label>Animal</label>
+              <input type='text' className='form-control' {...animaltype} />
+            </div>
 
-        <div className='row'>
-          <div className='form-group col-xs-12 col-md-4'>
-            <label>Animal</label>
-            <input type='text' className='form-control' {...animaltype} />
+            <div className='form-group col-xs-12 col-md-3'>
+              <label>Raça</label>
+              <input type='text' className='form-control' {...race} />
+            </div>
+
+            <div className='form-group col-xs-12 col-md-3'>
+              <label>Porte</label>
+              <input type='text' className='form-control' {...size} />
+            </div>
           </div>
 
-          <div className='form-group col-xs-12 col-md-2'>
-            <label>Raça</label>
-            <input type='text' className='form-control' {...race} />
-          </div>
+          <div className='row'>
+            <div className='form-group col-xs-12 col-md-8'>
+              <label>Endereço</label>
+              <input type='text' className='form-control' {...address} />
+            </div>
 
-          <div className='form-group col-xs-12 col-md-2'>
-            <label>Porte</label>
-            <input type='text' className='form-control' {...size} />
-          </div>
-        </div>
-
-        <div className='row'>
-          <div className='form-group col-xs-12 col-md-6'>
-            <label>Endereço</label>
-            <input type='text' className='form-control' {...address} />
-          </div>
-
-          <div className='form-group col-xs-12 col-md-2'>
-            <label>Data</label>
-            <input type='text' className='form-control' {...date} />
-          </div>
-        </div>
-
-        <div className='row'>
-          <div className='form-group col-xs-12 col-md-12'>
-            <label>Caracteristicas</label>
-            <textarea className='form-control' {...caracteristics} />
+            <div className='form-group col-xs-12 col-md-4'>
+              <label>Data</label>
+              <input type='text' className='form-control' {...date} />
+            </div>
           </div>
         </div>
 
-        <div className='row'>
-          <div className='form-group col-xs-12 col-md-12'>
-            <label>Condições</label>
-            <textarea className='form-control' {...conditions} />
+        <div className='form-img col-xs-12 col-md-4'>
+          <img src='../resources/css/catioro.jpeg' className='img-responsive' />
+        </div>
+
+        <div className='box col-xs-12 col-md-12'>
+          <div className='row'>
+            <div className='form-group col-xs-12 col-md-12'>
+              <label>Caracteristicas</label>
+              <textarea className='form-control' {...caracteristics} />
+            </div>
+          </div>
+
+          <div className='row'>
+            <div className='form-group col-xs-12 col-md-12'>
+              <label>Condições</label>
+              <textarea className='form-control' {...conditions} />
+            </div>
           </div>
         </div>
       </form>
