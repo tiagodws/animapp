@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { reduxForm } from 'redux-form';
 import { Link } from 'react-router'
-import { createAnimal } from '../actions/index';
+import { createAnimal } from '../actions/animal-actions';
 
 class AnimalNew extends Component {
   /*static contextTypes = {
@@ -60,7 +60,7 @@ class AnimalNew extends Component {
         </div>
 
         <div className='form-img col-xs-12 col-md-4'>
-          <img src='../resources/css/catioro.jpeg' className='img-responsive' />
+          <img src='../resources/img/catioro.jpeg' className='img-responsive' />
         </div>
 
         <div className='box col-xs-12 col-md-12'>
