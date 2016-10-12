@@ -1,7 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import { reduxForm } from 'redux-form';
-import { Link } from 'react-router'
+import { Link } from 'react-router';
 import { createAnimal } from '../actions/animal-actions';
+import Modal from '../../app/components/modal';
+import Album from '../../app/components/album';
 
 class AnimalNew extends Component {
   /*static contextTypes = {
@@ -13,6 +15,16 @@ class AnimalNew extends Component {
       this.context.router.push('/');
     })
   };*/
+
+  constructor (props) {
+      super(props);
+
+      this.state = {showModal: false};
+  }
+
+  switchModal () {
+      this.setState({showModal: !this.state.showModal});
+  }
 
   render () {
     const { fields: { name, race, animaltype, size, address, date, caracteristics, conditions, image }, handleSubmit } = this.props;
@@ -59,8 +71,9 @@ class AnimalNew extends Component {
           </div>
         </div>
 
-        <div className='form-img col-xs-12 col-md-4'>
-          <img src='../resources/img/catioro.jpeg' className='img-responsive' />
+        <div className='form-img form-img col-xs-12 col-md-4'>
+          <button type='button' onClick={this.switchModal.bind(this)}>Album</button>
+          <img src='../../../../../resources/img/catioro.jpeg' className='img-responsive' />
         </div>
 
         <div className='box col-xs-12 col-md-12'>
@@ -78,6 +91,8 @@ class AnimalNew extends Component {
             </div>
           </div>
         </div>
+
+        {this.state.showModal ? <Modal closeModal={this.switchModal.bind(this)}><Album /></Modal> : ""}
       </form>
     )
   }

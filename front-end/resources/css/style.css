@@ -1,0 +1,22 @@
+.form-img{
+    position: relative;
+}
+
+.form-btn-img{
+    position: absolute;
+}
+
+body .modal{
+    position: fixed;
+    top: 20%;
+    left: 25%;
+    right: 25%;
+    bottom: 20%;
+    border: 1px solid #ccc;
+    background: #fff;
+    overflow: auto;
+    border-radius: 4px;
+    outline: none;
+    padding: 20px;
+    display: block;
+}

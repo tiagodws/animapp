@@ -12,8 +12,10 @@ import App from './main/app/app';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
+export const store = createStoreWithMiddleware(reducers);
+
 ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
+  <Provider store={store}>
       <Router history={browserHistory} routes={routes}/>
   </Provider>
   , document.getElementById('app'));
