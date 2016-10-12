@@ -21,7 +21,6 @@ export default class Modal extends Component {
     }
 
     _render(){
-        debugger;
         ReactDOM.render(
             <Provider store={store}>
                 <div>
