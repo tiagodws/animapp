@@ -33,7 +33,7 @@ class AnimalNew extends Component {
       <form>
         <h3>Registrando um animal perdido</h3>
 
-        <div className='box col-xs-12 col-md-8'>
+        <div className='box col-xs-12 col-md-9'>
           <div className='row'>
             <div className='form-group col-xs-12 col-md-12'>
               <label>Nome</label>
@@ -71,9 +71,9 @@ class AnimalNew extends Component {
           </div>
         </div>
 
-        <div className='form-img form-img col-xs-12 col-md-4'>
+        <div className='form-img col-xs-12 col-md-3'>
           <button type='button' onClick={this.switchModal.bind(this)}>Album</button>
-          <img src='../../../../../resources/img/catioro.jpeg' className='img-responsive' />
+          <img src='../../../../../resources/img/catioro.jpeg' className='img-responsive form-img-prin' />
         </div>
 
         <div className='box col-xs-12 col-md-12'>

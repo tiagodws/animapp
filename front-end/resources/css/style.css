@@ -2,6 +2,11 @@
     position: relative;
 }
 
+.form-img-prin{
+    height: 210px;
+    width: 100%;
+}
+
 .form-btn-img{
     position: absolute;
 }
@@ -19,4 +24,9 @@ body .modal{
     outline: none;
     padding: 20px;
     display: block;
+}
+
+.modal-img {
+    max-height: 50%;
+    max-width: 50%;
 }
