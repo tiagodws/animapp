@@ -8,23 +8,13 @@ export default class App extends Component {
     return (
         <div>
 			<MainMenu />
-				<div className="row">
-					<div className="col-xs-12">
-					
-						<div className="col-xs-12 col-md-4">
-							<AnimalCard />
-						</div>
-						
-						<div className="col-xs-12 col-md-4">
-							<AnimalCard />
-						</div>
-						
-						<div className="col-xs-12 col-md-4">
-							<AnimalCard />
-						</div>
-
-
-					</div>
+				<div className="ui link cards">
+					<AnimalCard />
+					<AnimalCard />
+					<AnimalCard />
+					<AnimalCard />
+					<AnimalCard />
+					<AnimalCard />
 				</div>
 			{this.props.children}
         </div>
