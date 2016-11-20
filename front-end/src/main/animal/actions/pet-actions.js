@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-export const CREATE_ANIMAL = 'CREATE_ANIMAL';
+export const CREATE_PET = 'CREATE_PET';
 
 export function createAnimal() {
   return {
-    type: CREATE_ANIMAL,
+    type: CREATE_PET,
     payload: request
   };
 }
