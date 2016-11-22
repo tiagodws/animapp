@@ -22,11 +22,27 @@ export default class PetCard extends Component{
                     <img  src={this.props.animal.image} />
                 </div>
                 <div className="content">
-                    <div className="ui tiny images">
-                        <img className="ui image" src={this.props.animal.image} />
-                        <img className="ui image" src={this.props.animal.image} />
-                        <img className="ui image" src={this.props.animal.image} />
+
+                    <div className="ui three column grid">
+                        <div className="column">
+                            <div className="ui segment">
+                                <img className="ui image" src={this.props.animal.image} />
+                            </div>
+                        </div>
+                        <div className="column">
+                            <div className="ui segment">
+                                <img className="ui image" src={this.props.animal.image} />
+                            </div>
+                        </div>
+                        <div className="column">
+                            <div className="ui segment">
+                                <img className="ui image" src={this.props.animal.image} />
+                            </div>
+                        </div>
                     </div>
+
+
+
                     <div className="header">{this.props.animal.name}</div>
                     <div className="meta">
                         <a>Waifu</a>
