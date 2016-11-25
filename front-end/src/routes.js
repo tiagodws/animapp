@@ -5,6 +5,7 @@ import App from './main/app';
 import Home from './main/app/components/home';
 import PetNew from './main/animal/components/pet-new';
 import PetList from './main/animal/components/pet-list';
+import Login from './main/account/components/login';
 
 export default(
     <Route Path="/" component={App}>
@@ -12,5 +13,7 @@ export default(
         <Route path="/" component={Home} />
         <Route path="/pet/new" component={PetNew}/>
         <Route path="/adopt" component={PetList} />
+        <Route path="/login" component={Login} />
+        <Route path="/login" component={Login} />
     </Route>
 )

@@ -19,36 +19,31 @@ export default class PetCard extends Component{
                             </div>
                         </div>
                     </div>
-                    <img  src={this.props.animal.image} />
+                    <img  src={this.props.pet.getProfilePicture()} />
                 </div>
                 <div className="content">
 
                     <div className="ui three column grid">
-                        <div className="column">
-                            <div className="ui segment">
-                                <img className="ui image" src={this.props.animal.image} />
-                            </div>
-                        </div>
-                        <div className="column">
-                            <div className="ui segment">
-                                <img className="ui image" src={this.props.animal.image} />
-                            </div>
-                        </div>
-                        <div className="column">
-                            <div className="ui segment">
-                                <img className="ui image" src={this.props.animal.image} />
-                            </div>
-                        </div>
+                        {this.props.pet.getPictures().map((picture, index)=>{
+                              return(
+                                  <div className="column oi">
+                                      <div className="ui segment">
+                                          <img className="ui image" src={picture} />
+                                      </div>
+                                  </div>
+                              )
+                          })
+                        }
                     </div>
 
 
 
-                    <div className="header">{this.props.animal.name}</div>
+                    <div className="header">{this.props.pet.getName()}</div>
                     <div className="meta">
                         <a>Waifu</a>
                     </div>
                     <div className="description">
-                        {this.props.animal.description}
+                        {this.props.pet.getDescription()}
                     </div>
                 </div>
                 <div className= "extra content">

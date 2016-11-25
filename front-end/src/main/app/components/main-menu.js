@@ -19,7 +19,7 @@ export default class MainMenu extends Component{
               <div className="ui buttons">
                 <button className="ui positive button">Sign up</button>
                 <div className="or"></div>
-                <button className="ui button">Login</button>
+                <Link to="/login"><button className="ui button">Login</button></Link>
               </div>
             </div>
           </div>
