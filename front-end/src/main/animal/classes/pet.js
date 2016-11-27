@@ -1,6 +1,10 @@
 export default class Pet{
     constructor(){
         this.id = null;
+        this.publicationDate = new Date();
+        this.type = "";
+        this.race = "";
+        this.sex = "";
         this.name = "";
         this.description = "";
         this.pictures = [];
@@ -18,6 +22,38 @@ export default class Pet{
 
     getName(){
         return this.name;
+    }
+
+    getPublicationDate(){
+        return this.publicationDate;
+    }
+
+    setPublicationDate(publicationDate){
+        this.publicationDate = publicationDate;
+    }
+
+    getType(){
+        return this.type || "undefined";
+    }
+
+    setType(type){
+        this.type = type;
+    }
+
+    getRace(){
+        return this.race || "undefined";
+    }
+
+    setRace(race){
+        this.race = race;
+    }
+
+    getSex(){
+        return this.sex || 0;
+    }
+
+    setSex(sex){
+        this.sex = sex;
     }
 
     setName(name){

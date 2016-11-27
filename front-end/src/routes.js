@@ -12,7 +12,7 @@ export default(
         <IndexRoute component={App} />
         <Route path="/" component={Home} />
         <Route path="/pet/new" component={PetNew}/>
-        <Route path="/adopt" component={PetList} />
+        <Route path="/pet/adopt" component={PetList} />
         <Route path="/login" component={Login} />
         <Route path="/login" component={Login} />
     </Route>

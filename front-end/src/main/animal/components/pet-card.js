@@ -9,6 +9,7 @@ export default class PetCard extends Component{
     }
 
     render(){
+        debugger;
         return(
             <div className="card">
                 <div className="blurring dimmable image">
@@ -19,19 +20,21 @@ export default class PetCard extends Component{
                             </div>
                         </div>
                     </div>
-                    <img  src={this.props.pet.getProfilePicture()} />
+                    <img  src={this.getProfilePicture()} />
                 </div>
                 <div className="content">
 
                     <div className="ui three column grid">
                         {this.props.pet.getPictures().map((picture, index)=>{
-                              return(
-                                  <div className="column oi">
-                                      <div className="ui segment">
-                                          <img className="ui image" src={picture} />
-                                      </div>
-                                  </div>
-                              )
+                            if(picture != this.getProfilePicture()) {
+                                return (
+                                    <div className="column" onClick={()=> this.changeProfilePicture(picture).bind(this)} style={{cursor:"pointer"}}>
+                                        <div className="ui segment">
+                                            <img className="ui image" src={picture} />
+                                        </div>
+                                    </div>
+                                )
+                            }
                           })
                         }
                     </div>
@@ -40,7 +43,18 @@ export default class PetCard extends Component{
 
                     <div className="header">{this.props.pet.getName()}</div>
                     <div className="meta">
-                        <a>Waifu</a>
+                        <div className="ui label">
+                            Type
+                            <div className="detail">{this.props.pet.getType()}</div>
+                        </div>
+                        <div className="ui label">
+                            Race
+                            <div className="detail">{this.props.pet.getRace()}</div>
+                        </div>
+                        <div className="ui label">
+                            Sex
+                            <div className="detail"><i className={`${this.props.pet.getSex() ? "man" : "woman"} icon`}></i></div>
+                        </div>
                     </div>
                     <div className="description">
                         {this.props.pet.getDescription()}
@@ -62,5 +76,20 @@ export default class PetCard extends Component{
                 </div>
             </div>
         )
+    }
+
+
+
+    changeProfilePicture(picture){
+        this.setState({profilePicture: picture})
+    }
+
+    getProfilePicture(){
+        if(this.state && this.state.profilePicture){
+            return this.state.profilePicture;
+        }else{
+            return this.props.pet.getProfilePicture();
+        }
+
     }
 }

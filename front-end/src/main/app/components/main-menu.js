@@ -7,7 +7,7 @@ export default class MainMenu extends Component{
         <div className="ui stackable  menu">
           <Link className="item" to="/">Home </Link>
             <Link className="item" to="/pet/new">New </Link>
-          <Link className="item" to="/adopt">Adopt </Link>
+          <Link className="item" to="/pet/adopt">Adopt </Link>
           <div className="right menu">
             <div className="item">
               <div className="ui icon input">
