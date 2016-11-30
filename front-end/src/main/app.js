@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import MainMenu from './app/components/main-menu';
-import AnimalCard from './animal/components/pet-card';
+
 
 export default class App extends Component {
     render() {
@@ -10,8 +10,8 @@ export default class App extends Component {
             <div>
                 <MainMenu />
                 <div className="ui container">
-                    <div className="ui segments">
-                        <div className="ui segment">
+                    <div className="ui segments" >
+                        <div className="ui segment"  style={{minHeight: "85vh"}}>
                             {this.props.children}
                         </div>
                     </div>

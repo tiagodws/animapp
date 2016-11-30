@@ -18,7 +18,7 @@ export default class Home extends Component{
             },
             {
                 icon: "money green",
-                value: "R$ 159.00",
+                value: "R$ 1.590,00",
                 description: "Donated this month"
             }
         ]
@@ -26,8 +26,6 @@ export default class Home extends Component{
 
         return (
             <div>
-
-
                 <div className="ui text container">
 
                     <div className="ui grid">
@@ -39,15 +37,22 @@ export default class Home extends Component{
                             </h2>
                         </div>
 
+                        <div className="sixteen wide column center aligned">
+
+                            <p className="ui center aligned">We are here to help abandoned pets to find a new home.</p>
+                        </div>
+
                         <div className="sixteen wide column">
                             <div className="ui stackable three column grid">
                                 {statistics.map(this.renderStatistics)}
                             </div>
                         </div>
 
-                        <div className="sixteen wide column center aligned">
-
-                            <p className="ui center aligned">We are here to help abandoned pets to find a new home.</p>
+                        <div className="sixteen wide colum">
+                            <div className="ui basic segment">
+                                <img src="./resources/img/stray-dog-1.png" className="ui small right floated image" />
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur iaculis dui tellus, rutrum consequat metus vulputate ac. Aliquam eleifend egestas enim, non faucibus ipsum. Vivamus turpis purus, ullamcorper at commodo eu, gravida fermentum eros. Donec suscipit ipsum id erat rhoncus, molestie laoreet ipsum suscipit. Donec ultrices metus volutpat sem pharetra posuere. Nulla sed commodo ipsum. Suspendisse purus augue, blandit ac magna non, ornare consequat lacus. Mauris tincidunt ante efficitur gravida interdum. Pellentesque pulvinar odio sit amet ultricies facilisis. Nunc placerat metus et ante cursus, a tincidunt nunc pulvinar. Aliquam pretium fringilla leo non elementum. Curabitur orci justo, bibendum in pellentesque non, malesuada egestas nunc.</p>
+                            </div>
                         </div>
 
                     </div>
