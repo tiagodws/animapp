@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import MainMenu from './app/components/main-menu';
-import {loadLanguage} from './app/actions/language-actions'
+import {changeLanguage, loadLanguage} from './app/actions/language-actions'
 
 class App extends Component {
 
     componentDidMount(){
-        this.props.loadLanguage('pt');
+        this.props.changeLanguage('en');
+        this.props.loadLanguage('en');
     }
 
   render() {
@@ -28,7 +29,7 @@ class App extends Component {
 }
 
 function mapDispatchToProps(dispatch){
-    return bindActionCreators({loadLanguage}, dispatch);
+    return bindActionCreators({changeLanguage, loadLanguage}, dispatch);
 }
 
 function mapStateToProps(state){

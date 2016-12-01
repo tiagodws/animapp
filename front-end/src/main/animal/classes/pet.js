@@ -2,7 +2,7 @@ export default class Pet{
     constructor(){
         this.id = null;
         this.publicationDate = new Date();
-        this.type = "";
+        this.specie = "";
         this.race = "";
         this.sex = "";
         this.name = "";
@@ -32,16 +32,16 @@ export default class Pet{
         this.publicationDate = publicationDate;
     }
 
-    getType(){
-        return this.type || "undefined";
+    getSpecie(){
+        return this.specie || "";
     }
 
-    setType(type){
-        this.type = type;
+    setSpecie(specie){
+        this.specie = specie;
     }
 
     getRace(){
-        return this.race || "undefined";
+        return this.race || "";
     }
 
     setRace(race){

@@ -23,7 +23,7 @@ class PetCard extends Component{
                             </div>
                         </div>
                     </div>
-                    <img  src={this.getProfilePicture()} />
+                    <img src={this.getProfilePicture()} />
                 </div>
                 <div className="content">
 
@@ -47,8 +47,8 @@ class PetCard extends Component{
                     <div className="header">{this.props.pet.getName() || this.props.texts['UNDEFINED']}</div>
                     <div className="meta">
                         <div className="ui label">
-                            {this.props.texts['TYPE']}
-                            <div className="detail">{this.props.pet.getType() || this.props.texts['UNDEFINED']}</div>
+                            {this.props.texts['SPECIE']}
+                            <div className="detail">{this.props.pet.getSpecie() || this.props.texts['UNDEFINED']}</div>
                         </div>
                         <div className="ui label">
                             {this.props.texts['RACE']}
