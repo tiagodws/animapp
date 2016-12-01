@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router';
+import {connect} from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-export default class PetCard extends Component{
+class PetCard extends Component{
 
     componentDidMount(){
         $('.special.cards .image').dimmer({
@@ -16,11 +19,11 @@ export default class PetCard extends Component{
                     <div className="ui dimmer">
                         <div className="content">
                             <div className="center">
-                                <div className="ui inverted button"><i className="red heart icon"></i> Adopt</div>
+                                <div className="ui inverted button"><i className="red heart icon"></i>{this.props.texts['ADOPT']}</div>
                             </div>
                         </div>
                     </div>
-                    <img  src={this.getProfilePicture()} />
+                    <img src={this.getProfilePicture()} />
                 </div>
                 <div className="content">
 
@@ -41,18 +44,18 @@ export default class PetCard extends Component{
 
 
 
-                    <div className="header">{this.props.pet.getName()}</div>
+                    <div className="header">{this.props.pet.getName() || this.props.texts['UNDEFINED']}</div>
                     <div className="meta">
                         <div className="ui label">
-                            Type
-                            <div className="detail">{this.props.pet.getType()}</div>
+                            {this.props.texts['SPECIE']}
+                            <div className="detail">{this.props.pet.getSpecie() || this.props.texts['UNDEFINED']}</div>
                         </div>
                         <div className="ui label">
-                            Race
-                            <div className="detail">{this.props.pet.getRace()}</div>
+                            {this.props.texts['RACE']}
+                            <div className="detail">{this.props.pet.getRace() || this.props.texts['UNDEFINED']}</div>
                         </div>
                         <div className="ui label">
-                            Sex
+                            {this.props.texts['SEX']}
                             <div className="detail"><i className={`${this.props.pet.getSex() ? "man" : "woman"} icon`}></i></div>
                         </div>
                     </div>
@@ -64,7 +67,7 @@ export default class PetCard extends Component{
                     <span className="floated left">
                         <button className="ui labeled red icon button">
                             <i className="heart icon"></i>
-                            Adopt
+                            {this.props.texts['ADOPT']}
                         </button>
                         <button className="ui blue icon button">
                             <i className="info icon"></i>
@@ -93,3 +96,13 @@ export default class PetCard extends Component{
 
     }
 }
+
+
+
+function mapStateToProps(state){
+    return{
+        texts: state.languageResources.texts || {}
+    }
+}
+
+export default connect(mapStateToProps, null)(PetCard);

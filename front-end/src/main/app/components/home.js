@@ -1,6 +1,9 @@
 import React, {Component} from "react";
 
-export default class Home extends Component{
+import {connect} from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+class Home extends Component{
 
 
     render(){
@@ -9,17 +12,17 @@ export default class Home extends Component{
             {
                 icon: "child blue",
                 value: "257",
-                description: "Volunteers"
+                description: this.props.texts['VOLUNTEERS']
             },
             {
                 icon: "heart red",
                 value: "15",
-                description: "Adoptions this month"
+                description: this.props.texts['ADOPTIONS_THIS_MONTH']
             },
             {
                 icon: "money green",
                 value: "R$ 1.590,00",
-                description: "Donated this month"
+                description: this.props.texts['DONATED_THIS_MONTH']
             }
         ]
 
@@ -33,13 +36,12 @@ export default class Home extends Component{
                         <div className="sixteen wide column">
                             <h2 className="ui center aligned icon header">
                                 <i className="circular paw icon"></i>
-                                Welcome to Animapp
+                                {this.props.texts['WELCOME_TO_ANIMAPP']}
                             </h2>
                         </div>
 
                         <div className="sixteen wide column center aligned">
-
-                            <p className="ui center aligned">We are here to help abandoned pets to find a new home.</p>
+                            <p className="ui center aligned">{this.props.texts['WHAT_WE_DO']}</p>
                         </div>
 
                         <div className="sixteen wide column">
@@ -51,7 +53,7 @@ export default class Home extends Component{
                         <div className="sixteen wide colum">
                             <div className="ui basic segment">
                                 <img src="./resources/img/stray-dog-1.png" className="ui small right floated image" />
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur iaculis dui tellus, rutrum consequat metus vulputate ac. Aliquam eleifend egestas enim, non faucibus ipsum. Vivamus turpis purus, ullamcorper at commodo eu, gravida fermentum eros. Donec suscipit ipsum id erat rhoncus, molestie laoreet ipsum suscipit. Donec ultrices metus volutpat sem pharetra posuere. Nulla sed commodo ipsum. Suspendisse purus augue, blandit ac magna non, ornare consequat lacus. Mauris tincidunt ante efficitur gravida interdum. Pellentesque pulvinar odio sit amet ultricies facilisis. Nunc placerat metus et ante cursus, a tincidunt nunc pulvinar. Aliquam pretium fringilla leo non elementum. Curabitur orci justo, bibendum in pellentesque non, malesuada egestas nunc.</p>
+                                <p>{this.props.texts['WELCOME_TEXT']}</p>
                             </div>
                         </div>
 
@@ -78,3 +80,11 @@ export default class Home extends Component{
         )
     }
 }
+
+function mapStateToProps(state){
+    return{
+        texts: state.languageResources.texts || {}
+    }
+}
+
+export default connect(mapStateToProps, null)(Home);

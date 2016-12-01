@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
-
+import {connect} from 'react-redux';
+import { bindActionCreators } from 'redux';
 import MainMenu from './app/components/main-menu';
+import {changeLanguage, loadLanguage} from './app/actions/language-actions'
 
+class App extends Component {
 
-export default class App extends Component {
-    render() {
+    componentDidMount(){
+        this.props.changeLanguage('en');
+        this.props.loadLanguage('en');
+    }
+
+  render() {
 
         return (
             <div>
@@ -20,3 +27,16 @@ export default class App extends Component {
         );
     }
 }
+
+function mapDispatchToProps(dispatch){
+    return bindActionCreators({changeLanguage, loadLanguage}, dispatch);
+}
+
+function mapStateToProps(state){
+    debugger;
+    return{
+        texts: state.languageResources.texts
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
