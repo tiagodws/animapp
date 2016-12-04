@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { reduxForm } from 'redux-form';
-import { createAnimal } from '../actions/pet-actions';
+import { createPet } from '../actions/pet-actions';
 import { Pet } from '../classes/pet'
 import Modal from '../../app/components/modal';
 import Album from '../../app/components/album';
@@ -32,7 +32,7 @@ class PetNew extends Component {
         createdPet.setSex(props.petSex);
         createdPet.setDescription(props.petDescription);
         createdPet.setOwner(props.petOwner)
-        this.props.createAnimal(props);
+        this.props.createPet(createdPet);
     }
 
     render () {
@@ -154,4 +154,4 @@ function mapStateToProps(state){
 export default reduxForm({
     form: 'PetNewForm',
     fields: ['petName', 'petRace', 'petWeight', 'petAge', 'petSex', 'petDescription', 'petOwner']
-}, mapStateToProps, { createAnimal })(PetNew);
+}, mapStateToProps, { createPet })(PetNew);
