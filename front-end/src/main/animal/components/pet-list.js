@@ -25,8 +25,6 @@ class PetList extends Component{
     }
 
     renderPet(pet){
-
-        debugger;
         return (<PetCard pet={pet} key={pet.getId()} /> )
     }
 }
@@ -36,7 +34,6 @@ function mapDispatchToProps(dispatch){
 }
 
 function mapStateToProps(state){
-    debugger;
     return{
         petList: state.pets && state.pets.petList ? state.pets.petList : []
     }

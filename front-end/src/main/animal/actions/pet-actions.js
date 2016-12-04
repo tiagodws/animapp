@@ -3,10 +3,10 @@ import axios from 'axios';
 export const CREATE_PET = 'CREATE_PET';
 export const LOAD_PETS = 'LOAD_PETS';
 
-export function createAnimal() {
+export function createAnimal(props) {
   return {
     type: CREATE_PET,
-    payload: {}
+    payload: props
   };
 }
 

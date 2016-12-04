@@ -12,7 +12,6 @@ class PetCard extends Component{
     }
 
     render(){
-        debugger;
         return(
             <div className="card">
                 <div className="blurring dimmable image">

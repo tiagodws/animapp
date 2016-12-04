@@ -48,7 +48,6 @@ function mapDispatchToProps(dispatch){
 }
 
 function mapStateToProps(state){
-    debugger;
     return{
         lang: state.languageResources.lang,
         texts: state.languageResources.texts || {}
