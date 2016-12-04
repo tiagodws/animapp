@@ -7,6 +7,7 @@ export default class Pet{
         this.sex = "";
         this.name = "";
         this.description = "";
+        this.weight = "";
         this.pictures = [];
         this.owner = null;
     }
@@ -82,6 +83,14 @@ export default class Pet{
 
     setOwner(owner){
         this.owner = owner;
+    }
+
+    getWeight(){
+        return this.weight;
+    }
+
+    setWeight(weight){
+        this.weight = weight;
     }
 
     //RANDOM METHODS

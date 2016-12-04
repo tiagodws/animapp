@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { reduxForm } from 'redux-form';
 import { createAnimal } from '../actions/pet-actions';
+import { Pet } from '../classes/pet'
 import Modal from '../../app/components/modal';
 import Album from '../../app/components/album';
 
@@ -23,18 +24,28 @@ class PetNew extends Component {
     }
 
     onSubmit(props){
+        let createdPet = new Pet();
+        createdPet.setName(props.petName);
+        createdPet.setRace(props.petRace);
+        createdPet.setWeight(props.petWeight);
+        createdPet.setMonth(props.petAge);
+        createdPet.setSex(props.petSex);
+        createdPet.setDescription(props.petDescription);
+        createdPet.setOwner(props.petOwner)
         this.props.createAnimal(props);
     }
 
     render () {
-        const { fields: {petName, petRace, petWeight, petAge}, handleSubmit } = this.props;
-
+        const race = new Map([
+            ['1','Poodle'],
+            ['2','Pitbull']]);
+        const { fields: {petName, petRace, petWeight, petAge, petSex, petDescription, petOwner}, handleSubmit } = this.props;
         return (
             <div>
 
                 <h2 className="ui center aligned icon header">
                     <i className="circular add icon"></i>
-                    Help a new pet
+                    {this.props.texts['HELP_PET_TEXT']}
                 </h2>
 
                 <div className="ui grid">
@@ -76,14 +87,35 @@ class PetNew extends Component {
                                 <div className="four wide field">
                                     <label>{this.props.texts['SPECIE']}</label>
                                     <select {...petRace}>
-                                        <option value="">Poodle</option>
-                                        <option value="">Pitbull</option>
+                                        {race.forEach((race, cod) => {
+                                            <option value={cod}>{race}</option>
+                                        })}
                                     </select>
                                 </div>
 
                                 <div className="four wide field">
                                     <label>{this.props.texts['PET_WEIGHT']}</label>
                                     <input type="number" name="pet-weight" placeholder={this.props.texts['PET_WEIGHT_INFO']} {...petWeight}/>
+                                </div>
+
+                                <div className="four wide field">
+                                    <label>{this.props.texts['PET_SEX']}</label>
+                                    <select {...petSex}>
+                                        <option value="1">Male</option>
+                                        <option value="2">Female</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div className="twelve wide field">
+                                    <label>{this.props.texts['PET_OWNER']}</label>
+                                    <input type="text" name="pet-owner" {...petOwner}/>
+                                </div>
+
+                                <div className="twelve wide field">
+                                    <label>{this.props.texts['PET_DESCRIPTION']}</label>
+                                    <input type="text" name="pet-description" {...petDescription}/>
                                 </div>
                             </div>
 
@@ -94,7 +126,7 @@ class PetNew extends Component {
                                     <div>
                                         <label className="ui icon button">
                                             <i className="picture icon"></i>
-                                            Upload picture</label>
+                                            {this.props.texts['UPLOAD_PICTURE']}</label>
                                         <input type="file" id="file" style={{display:'none'}} />
                                     </div>
                                 </div>
@@ -121,5 +153,5 @@ function mapStateToProps(state){
 
 export default reduxForm({
     form: 'PetNewForm',
-    fields: ['petName', 'petRace', 'petWeight', 'petAge']
+    fields: ['petName', 'petRace', 'petWeight', 'petAge', 'petSex', 'petDescription', 'petOwner']
 }, mapStateToProps, { createAnimal })(PetNew);

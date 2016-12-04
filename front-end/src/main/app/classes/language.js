@@ -27,8 +27,11 @@ class Language{
             NEW_PET_CARE_CONTENT_1: 'Take care of the pet until we find him a new family',
             NEW_PET_CARE_CONTENT_2: "Don't let a living soul in the streets!",
             SUBMIT: 'Submit',
-
-        }
+            PET_SEX: 'Pet sex',
+            PET_DESCRIPTION: 'Pet description',
+            PET_OWNER: 'Pet owner',
+            HELP_PET_TEXT: 'Help a new pet',
+        };
 
         const br = {
             HOME_BUTTON: 'Inicio',
@@ -44,7 +47,7 @@ class Language{
             PET_WEIGHT_INFO: 'Peso em gr',
             PET_AGE: 'Meses',
             PET_AGE_INFO: 'Idade em meses',
-            UPLOAD_PICTURE: 'Upload picture',
+            UPLOAD_PICTURE: 'Carregar foto',
             UNDEFINED: 'Indefinido',
             WELCOME_TO_ANIMAPP: 'Seja bem vindo ao Animapp!',
             WHAT_WE_DO: 'Nós ajudamos pets abandonados a encontrarem um novo lar.',
@@ -57,7 +60,11 @@ class Language{
             NEW_PET_CARE_CONTENT_1: 'Cuide do animal de estimação até encontrarmos uma nova família',
             NEW_PET_CARE_CONTENT_2: "Não deixe uma alma viva nas ruas!",
             SUBMIT: 'Cadastrar',
-        }
+            PET_SEX: 'Sexo',
+            PET_DESCRIPTION: 'Descrição',
+            PET_OWNER: 'Dono',
+            HELP_PET_TEXT: 'Ajude um animal',
+        };
 
 
         this.texts = {en, br};
