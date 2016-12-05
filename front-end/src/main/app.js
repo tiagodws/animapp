@@ -33,7 +33,6 @@ function mapDispatchToProps(dispatch){
 }
 
 function mapStateToProps(state){
-    debugger;
     return{
         texts: state.languageResources.texts
     }

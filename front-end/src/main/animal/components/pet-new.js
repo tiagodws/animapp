@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { reduxForm } from 'redux-form';
-import { Link } from 'react-router';
-import { createAnimal } from '../actions/pet-actions';
+import { createPet } from '../actions/pet-actions';
+import { Pet } from '../classes/pet'
 import Modal from '../../app/components/modal';
 import Album from '../../app/components/album';
 
@@ -23,15 +23,29 @@ class PetNew extends Component {
         ;
     }
 
-    render () {
-        const { fields: {}, handleSubmit } = this.props;
+    onSubmit(props){
+        let createdPet = new Pet();
+        createdPet.setName(props.petName);
+        createdPet.setRace(props.petRace);
+        createdPet.setWeight(props.petWeight);
+        createdPet.setMonth(props.petAge);
+        createdPet.setSex(props.petSex);
+        createdPet.setDescription(props.petDescription);
+        createdPet.setOwner(props.petOwner)
+        this.props.createPet(createdPet);
+    }
 
+    render () {
+        const race = new Map([
+            ['1','Poodle'],
+            ['2','Pitbull']]);
+        const { fields: {petName, petRace, petWeight, petAge, petSex, petDescription, petOwner}, handleSubmit } = this.props;
         return (
             <div>
 
                 <h2 className="ui center aligned icon header">
                     <i className="circular add icon"></i>
-                    Help a new pet
+                    {this.props.texts['HELP_PET_TEXT']}
                 </h2>
 
                 <div className="ui grid">
@@ -40,47 +54,68 @@ class PetNew extends Component {
                         <div className="ui header">
                             <i className="info icon"></i>
                             <div className="content">
-                                Provide as much information as possible
-                                <div className="sub header"> Fill this form to list a new pet that needs help!</div>
+                                {this.props.texts['NEW_PET_INFO_CONTENT_1']}
+                                <div className="sub header"> {this.props.texts['NEW_PET_INFO_CONTENT_2']}</div>
                             </div>
                         </div>
                         <div className="ui header">
                             <i className="heart icon"></i>
                             <div className="content">
-                                Take care of the pet until we find him a new family
-                                <div className="sub header"> Don't let a living soul in the streets!</div>
+                                {this.props.texts['NEW_PET_CARE_CONTENT_1']}
+                                <div className="sub header"> {this.props.texts['NEW_PET_CARE_CONTENT_2']}</div>
                             </div>
                         </div>
                     </div>
 
                     <div className="eleven wide column">
-                        <form className="ui form">
+                        <form className="ui form" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
                             <h4 className="ui dividing header">Pet Info</h4>
 
                             <div className="fields">
                                 <div className="twelve wide field">
-                                    <label>Pet name</label>
-                                    <input type="text" name="pet-name" placeholder="Pet Name" />
+                                    <label>{this.props.texts['PET_NAME']}</label>
+                                    <input type="text" name="pet-name" placeholder={this.props.texts['PET_NAME']} {...petName}/>
                                 </div>
 
                                 <div className="four wide field">
-                                    <label>Months</label>
-                                    <input type="number" name="pet-months" placeholder="Age in months"/>
+                                    <label>{this.props.texts['PET_AGE']}</label>
+                                    <input type="number" name="pet-months" placeholder={this.props.texts['PET_AGE_INFO']} {...petAge}/>
                                 </div>
                             </div>
 
                             <div className="fields">
                                 <div className="four wide field">
-                                    <label>Pet Race</label>
-                                    <select>
-                                        <option value="">Poodle</option>
-                                        <option value="">Pitbull</option>
+                                    <label>{this.props.texts['SPECIE']}</label>
+                                    <select {...petRace}>
+                                        {race.forEach((race, cod) => {
+                                            <option value={cod}>{race}</option>
+                                        })}
                                     </select>
                                 </div>
 
                                 <div className="four wide field">
-                                    <label>Weight</label>
-                                    <input type="number" name="pet-weight" placeholder="Pet weight in g" />
+                                    <label>{this.props.texts['PET_WEIGHT']}</label>
+                                    <input type="number" name="pet-weight" placeholder={this.props.texts['PET_WEIGHT_INFO']} {...petWeight}/>
+                                </div>
+
+                                <div className="four wide field">
+                                    <label>{this.props.texts['PET_SEX']}</label>
+                                    <select {...petSex}>
+                                        <option value="1">Male</option>
+                                        <option value="2">Female</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div className="twelve wide field">
+                                    <label>{this.props.texts['PET_OWNER']}</label>
+                                    <input type="text" name="pet-owner" {...petOwner}/>
+                                </div>
+
+                                <div className="twelve wide field">
+                                    <label>{this.props.texts['PET_DESCRIPTION']}</label>
+                                    <input type="text" name="pet-description" {...petDescription}/>
                                 </div>
                             </div>
 
@@ -91,22 +126,32 @@ class PetNew extends Component {
                                     <div>
                                         <label className="ui icon button">
                                             <i className="picture icon"></i>
-                                            Upload picture</label>
+                                            {this.props.texts['UPLOAD_PICTURE']}</label>
                                         <input type="file" id="file" style={{display:'none'}} />
                                     </div>
                                 </div>
                             </div>
 
                             {this.state.showModal ? <Modal closeModal={this.switchModal.bind(this)}><Album /></Modal> : ""}
+
+
+                            <button type='submit' className="ui button">{this.props.texts['SUBMIT']}</button>
                         </form>
                     </div>
                 </div>
             </div>
-    )
+        )
     }
-    }
+}
 
-    export default reduxForm({
-        form: 'PetNewForm',
-        fields: ['name', 'race', 'animaltype', 'size', 'address', 'date', 'caracteristics', 'conditions', 'image']
-    }, null, { createAnimal })(PetNew);
+
+function mapStateToProps(state){
+    return{
+        texts: state.languageResources.texts || {}
+    }
+}
+
+export default reduxForm({
+    form: 'PetNewForm',
+    fields: ['petName', 'petRace', 'petWeight', 'petAge', 'petSex', 'petDescription', 'petOwner']
+}, mapStateToProps, { createPet })(PetNew);
