@@ -36,14 +36,12 @@ class PetNew extends Component {
     }
 
     render () {
-        const race = new Map([
-            {code:'',label:'---'}
+        const races = [{code:'',label:'---'},
             {code:'1',label:'Poodle'},
-            {code:'2',label:'Pitbull'}]);
-        const sex = new Map([
-            {code:'',label:'---'}
+            {code:'2',label:'Pitbull'}];
+        const sexs = [{code:'',label:'---'},
             {code:'1',label:'Female'},
-            {code:'2',label:'Male'}]);
+            {code:'2',label:'Male'}];
         const { fields: {petName, petRace, petWeight, petAge, petSex, petDescription}, handleSubmit } = this.props;
         return (
             <div>
@@ -92,8 +90,9 @@ class PetNew extends Component {
                                 <div className="four wide field">
                                     <label>{this.props.texts['SPECIE']}</label>
                                     <select {...petRace}>
-                                        {race.map((race) => {
-                                            <option value={race.code}>{race.label}</option>
+                                        {races.map((race) => {
+                                          debugger;
+                                            return <option value={race.code}>{race.label}</option>
                                         })}
                                     </select>
                                 </div>
@@ -106,8 +105,8 @@ class PetNew extends Component {
                                 <div className="four wide field">
                                     <label>{this.props.texts['PET_SEX']}</label>
                                     <select {...petSex}>
-                                      {sex.map((sex) => {
-                                          <option value={sex.code}>{sex.label}</option>
+                                      {sexs.map((sex) => {
+                                          return <option value={sex.code}>{sex.label}</option>
                                       })}
                                     </select>
                                 </div>
