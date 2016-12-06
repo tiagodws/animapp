@@ -36,10 +36,13 @@ class PetNew extends Component {
     }
 
     render () {
-        const race = new Map([
-            ['1','Poodle'],
-            ['2','Pitbull']]);
-        const { fields: {petName, petRace, petWeight, petAge, petSex, petDescription, petOwner}, handleSubmit } = this.props;
+        const races = [{code:'',label:'---'},
+            {code:'1',label:'Poodle'},
+            {code:'2',label:'Pitbull'}];
+        const sexs = [{code:'',label:'---'},
+            {code:'1',label:'Female'},
+            {code:'2',label:'Male'}];
+        const { fields: {petName, petRace, petWeight, petAge, petSex, petDescription}, handleSubmit } = this.props;
         return (
             <div>
 
@@ -87,8 +90,9 @@ class PetNew extends Component {
                                 <div className="four wide field">
                                     <label>{this.props.texts['SPECIE']}</label>
                                     <select {...petRace}>
-                                        {race.forEach((race, cod) => {
-                                            <option value={cod}>{race}</option>
+                                        {races.map((race) => {
+                                          debugger;
+                                            return <option value={race.code}>{race.label}</option>
                                         })}
                                     </select>
                                 </div>
@@ -101,18 +105,14 @@ class PetNew extends Component {
                                 <div className="four wide field">
                                     <label>{this.props.texts['PET_SEX']}</label>
                                     <select {...petSex}>
-                                        <option value="1">Male</option>
-                                        <option value="2">Female</option>
+                                      {sexs.map((sex) => {
+                                          return <option value={sex.code}>{sex.label}</option>
+                                      })}
                                     </select>
                                 </div>
                             </div>
 
                             <div>
-                                <div className="twelve wide field">
-                                    <label>{this.props.texts['PET_OWNER']}</label>
-                                    <input type="text" name="pet-owner" {...petOwner}/>
-                                </div>
-
                                 <div className="twelve wide field">
                                     <label>{this.props.texts['PET_DESCRIPTION']}</label>
                                     <input type="text" name="pet-description" {...petDescription}/>
@@ -153,5 +153,5 @@ function mapStateToProps(state){
 
 export default reduxForm({
     form: 'PetNewForm',
-    fields: ['petName', 'petRace', 'petWeight', 'petAge', 'petSex', 'petDescription', 'petOwner']
+    fields: ['petName', 'petRace', 'petWeight', 'petAge', 'petSex', 'petDescription']
 }, mapStateToProps, { createPet })(PetNew);
