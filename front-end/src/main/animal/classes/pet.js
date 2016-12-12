@@ -4,17 +4,18 @@ export default class Pet{
         this.publicationDate = new Date();
         this.specie = "";
         this.race = "";
-        this.sex = "";
+        this.sex = "M";
         this.name = "";
         this.description = "";
         this.weight = "";
+		this.castrated = false;
+		this.dewormed = false;
         this.pictures = [];
-        this.owner = null;
     }
 
     //getters and setters
     getId(){
-        return this.id;
+        return this.id; 
     }
 
     setId(id){
@@ -24,6 +25,10 @@ export default class Pet{
     getName(){
         return this.name;
     }
+	
+	setName(name){
+		this.name = name;
+	}
 
     getPublicationDate(){
         return this.publicationDate;
@@ -68,6 +73,30 @@ export default class Pet{
     setDescription(description){
         this.description = description;
     }
+	
+	getWeight(){
+        return this.weight;
+    }
+
+    setWeight(weight){
+        this.weight = weight;
+    }
+	
+	isCastrated(){
+		return this.castrated;
+	}
+	
+	setCastrated(castrated){
+		this.castrated = castrated;
+	}
+	
+	isDewormed(){
+		return this.dewormed;
+	}
+	
+	setDewormed(dewormed){
+		this.dewormed = dewormed;
+	}
 
     getPictures(){
         return this.pictures;
@@ -77,29 +106,8 @@ export default class Pet{
         this.pictures = pictures;
     }
 
-    getOwner(){
-        return this.owner;
-    }
-
-    setOwner(owner){
-        this.owner = owner;
-    }
-
-    getWeight(){
-        return this.weight;
-    }
-
-    setWeight(weight){
-        this.weight = weight;
-    }
-
     //RANDOM METHODS
-
     getProfilePicture(){
         return this.pictures[0];
     }
-
-
-
-
 }

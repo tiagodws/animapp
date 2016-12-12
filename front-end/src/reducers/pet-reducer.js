@@ -13,11 +13,14 @@ export default function (state = INITIAL_STATE, action){
 
                 const pet = new Pet();
                 pet.setId(petData.id);
+				pet.setPublicationDate(new Date(petData.publicationDate));
+				pet.setSpecie(petData.specie);
+				pet.setRace(petData.race);
+				pet.setSex(petData.sex);
                 pet.setName(petData.name);
                 pet.setDescription(petData.description);
+				pet.setWeight(petData.weight);
                 pet.setPictures(pictures);
-                pet.setOwner(petData.owner);
-
                 return pet;
             });
             return {...state, petList};

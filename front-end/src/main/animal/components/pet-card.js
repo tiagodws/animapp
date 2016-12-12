@@ -55,7 +55,11 @@ class PetCard extends Component{
                         </div>
                         <div className="ui label">
                             {this.props.texts['SEX']}
-                            <div className="detail"><i className={`${this.props.pet.getSex() ? "man" : "woman"} icon`}></i></div>
+                            <div className="detail"><i className={`${this.props.pet.getSex() == 'M' ? 'man' : 'woman'} icon`}></i></div>
+                        </div>
+						<div className="ui label">
+                            {this.props.texts['UNDEFINED']}
+                            <div className="detail">{this.props.pet.getPublicationDate().toDateString()}</div>
                         </div>
                     </div>
                     <div className="description">
