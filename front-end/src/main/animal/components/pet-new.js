@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { reduxForm } from 'redux-form';
 import { createPet } from '../actions/pet-actions';
-import { Pet } from '../classes/pet'
+import { Pet } from '../classes/pet-class';
 import Modal from '../../app/components/modal';
 import Album from '../../app/components/album';
 

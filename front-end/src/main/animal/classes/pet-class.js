@@ -11,6 +11,7 @@ export default class Pet{
 		this.castrated = false;
 		this.dewormed = false;
         this.pictures = [];
+		this.ownerId = "";
     }
 
     //getters and setters
@@ -105,6 +106,14 @@ export default class Pet{
     setPictures(pictures){
         this.pictures = pictures;
     }
+	
+	getOwnerId(){
+		return this.ownerId;
+	}
+	
+	setOwnerId(ownerId){
+		this.ownerId = ownerId;
+	}
 
     //RANDOM METHODS
     getProfilePicture(){
