@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {loadPets} from '../actions/pet-actions';
-
+import Pet from '../classes/pet-class';
 import PetCard from './pet-card';
 
 class PetList extends Component{
@@ -24,7 +24,19 @@ class PetList extends Component{
         )
     }
 
-    renderPet(pet){
+    renderPet(petData){
+		const pet = new Pet();
+		pet.setId(petData.id);
+		pet.setPublicationDate(new Date(petData.publicationDate));
+		pet.setSpecie(petData.specie);
+		pet.setRace(petData.race);
+		pet.setSex(petData.sex);
+		pet.setName(petData.name);
+		pet.setDescription(petData.description);
+		pet.setWeight(petData.weight);
+		pet.setPictures(petData.pictures);	  
+		pet.setOwnerId(petData.ownerId);
+		
         return (<PetCard pet={pet} key={pet.getId()} /> )
     }
 }
