@@ -25,6 +25,8 @@ class Home extends Component{
                 description: this.props.texts['DONATED_THIS_MONTH']
             }
         ]
+		
+		const USER = 'TESTE';
 
 
         return (
