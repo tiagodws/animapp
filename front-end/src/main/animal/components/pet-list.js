@@ -25,6 +25,7 @@ class PetList extends Component{
     }
 
     renderPet(petData){
+		debugger;
 		const pet = new Pet();
 		pet.setId(petData.id);
 		pet.setPublicationDate(new Date(petData.publicationDate));
