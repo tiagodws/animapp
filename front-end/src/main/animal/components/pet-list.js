@@ -15,7 +15,7 @@ class PetList extends Component{
 
         return(
         <div className="ui container">
-            <div className="ui special three stackable cards">
+            <div className="ui three stackable cards">
                 {console.log(this.props.petList)}
                 {this.props.petList.map(this.renderPet)}
             </div>
@@ -35,9 +35,9 @@ class PetList extends Component{
 		pet.setName(petData.name);
 		pet.setDescription(petData.description);
 		pet.setWeight(petData.weight);
-		pet.setPictures(petData.pictures);	  
+		pet.setPictures(petData.pictures);
 		pet.setOwnerId(petData.ownerId);
-		
+
         return (<PetCard pet={pet} key={pet.getId()} /> )
     }
 }

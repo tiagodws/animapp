@@ -14,18 +14,8 @@ class PetCard extends Component{
     render(){
         return(
             <div className="card">
-                <div className="blurring dimmable image">
-                    <div className="ui dimmer">
-                        <div className="content">
-                            <div className="center">
-                                <div className="ui inverted button"><i className="red heart icon"></i>{this.props.texts['ADOPT']}</div>
-                            </div>
-                        </div>
-                    </div>
-                    <img src={this.getProfilePicture()} />
-                </div>
+                <img className="ui medium fluid image" src={this.getProfilePicture()} />
                 <div className="content">
-
                     <div className="ui three column grid">
                         {this.props.pet.getPictures().map((picture, index)=>{
                             if(picture != this.getProfilePicture()) {
@@ -40,9 +30,6 @@ class PetCard extends Component{
                           })
                         }
                     </div>
-
-
-
                     <div className="header">{this.props.pet.getName() || this.props.texts['UNDEFINED']}</div>
                     <div className="meta">
                         <div className="ui label">

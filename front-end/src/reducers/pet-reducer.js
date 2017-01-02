@@ -6,6 +6,7 @@ const INITIAL_STATE = {petList: []};
 export default function (state = INITIAL_STATE, action){
     switch(action.type){
         case CREATE_PET:
+            
             return {...state, retorno: {}};
         case LOAD_PETS:
             return {...state, petList: action.payload.data};
