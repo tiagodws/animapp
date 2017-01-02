@@ -33,7 +33,7 @@ class Language{
             DEWORMED: 'Dewormed'
         };
 
-        const en = {
+        const br = {
             HOME_BUTTON: 'Inicio',
             REGISTER_PET_BUTTON: 'Cadastrar um Pet',
             ADOPT_PET_BUTTON: 'Adotar',
@@ -65,7 +65,7 @@ class Language{
             CASTRATED: 'Castrado',
             DEWORMED: 'Vermifugado'
         };
-        this.texts = {en};
+        this.texts = {en, br};
     }
     getText(lang){
         return this.texts[lang];
