@@ -1,4 +1,4 @@
-  const petData = [{
+const petData = [{
   "id" : 1,
   "publicationDate" : "2016-12-10T18:42:48Z",
   "specie" : "Cat",
@@ -375,4 +375,24 @@
   "ownerId" : 3
 }];
 
-module.exports = petData;
+const catSpeciesData = [{
+  "id": 1,
+  "description": "Siamês"
+},{
+  "id": 2,
+  "description": "Persa"
+}];
+
+const dogSpeciesData = [{
+  "id": 1,
+  "description": "Pitbull"
+}, {
+  "id": 2,
+  "description": "Poodle"
+}]
+
+module.exports = {
+  petData,
+  catSpeciesData,
+  dogSpeciesData
+};
