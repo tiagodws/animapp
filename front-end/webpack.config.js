@@ -1,3 +1,6 @@
+var path = require('path');
+var webpack = require('webpack');
+
 module.exports = {
   entry: [
     './src/root.js'
@@ -8,16 +11,21 @@ module.exports = {
     filename: 'bundle.js'
   },
   module: {
-    loaders: [{
+    loaders: [
+	{
+	  test: /\.js$/,
       exclude: /node_modules/,
       loader: 'babel',
       query: {
         presets: ['react', 'es2015', 'stage-1']
       }
-    }]
+    },{
+		test: /\.less$/, loader: 'style!css!less'
+	}
+	]
   },
   resolve: {
-    extensions: ['', '.js', '.jsx']
+	root: [path.join(__dirname, "./src")]
   },
   devServer: {
     historyApiFallback: true,
