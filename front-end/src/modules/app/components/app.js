@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import {Container} from 'semantic-ui-react';
+import {Container, Image, Segment} from 'semantic-ui-react';
 import '../../../styles/style.less';
 import MainMenu from './main-menu';
+import MainFooter from './main-footer';
 
 
 export default class App extends Component{
@@ -10,7 +11,10 @@ export default class App extends Component{
 			<div>
 				<Container>
 					<MainMenu />
-					{this.props.children}
+					<Segment>
+						{this.props.children}
+					</Segment>
+					<MainFooter/>
 				</Container>
 			</div>
 		)

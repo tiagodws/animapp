@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux'
-import {Menu, Dropdown} from 'semantic-ui-react';
+import {Menu, Dropdown, Icon} from 'semantic-ui-react';
 import {Link} from 'react-router';
 
 class MainMenu extends Component{
@@ -19,18 +19,25 @@ class MainMenu extends Component{
             {path: '/shelters/new', description: 'Lar temporário'}
         ]};
 
+        const signup = {path:'account/signup', description: 'Registro'};
+        const login = {path:'account/login', description: 'Login'}
+
         return(
             <Menu stackable>
-                <Menu.Item header>Animapp</Menu.Item>
+                <Menu.Item header><Icon name='paw'/>Animapp</Menu.Item>
                 {this.renderMenuItem(home)}
                 {this.renderMenuItem(pets)}
                 {this.renderDropdown(register)}
+
+                <Menu.Menu position='right'>
+                    {this.renderMenuItem(login)}
+                    {this.renderMenuItem(signup)}
+                </Menu.Menu>
             </Menu>
         )
     }
 
     renderMenuItem(config){
-        debugger;
         return(
             <Link to={config.path}>
                 <Menu.Item link>
