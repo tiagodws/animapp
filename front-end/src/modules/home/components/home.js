@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Container, Header, Statistic, Icon, Divider, Grid, Image, Segment} from 'semantic-ui-react';
+import {Container, Header, Statistic, Icon, Divider, Grid, Image, Embed, Button} from 'semantic-ui-react';
 import {Link} from 'react-router';
 
 class Home extends Component {
@@ -28,6 +28,7 @@ class Home extends Component {
                             </p>
                             <p>Se você encontrou um pet abandonado e precisa de ajuda, você também pode <Link to='/pets/new'>cadastra-lo na plataforma</Link>.
                             </p>
+                            <Button size='huge' color='red' fluid><Icon name='heart'/>Adotar</Button>
                         </Grid.Column>
                         <Grid.Column width={6}>
                             <Image src='/assets/image/cat_pet.png' size='small' floated='right'/>
@@ -41,6 +42,17 @@ class Home extends Component {
                                 {this.renderStatistic({icon:{name:'home', color:'blue'}, value:17, path:'/shelters/new', description:'Lares temporários'})}
                                 {this.renderStatistic({icon:{name:'money', color:'green'}, value:'R$ 1.750,50', path:'/donations', description:'Em doações'})}
                             </Statistic.Group>
+                        </Grid.Column>
+                    </Grid.Row>
+                    <Grid.Row><Divider horizontal>Adote</Divider></Grid.Row>
+                    <Grid.Row>
+                        <Grid.Column>
+                            <Embed
+                                id='jc5XQSVeQ2c'
+                                placeholder='./assets/image/animapp_logo.png'
+                                source='youtube'
+
+                            />
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>
