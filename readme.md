@@ -1,11 +1,11 @@
-### Animapp
+# Animapp
 
 Nós ajudaremos animais abandonados a encontrarem um novo lar!
 
 
 
-#Desenvolvimento:
+#### Desenvolvimento:
 * Matheus Blödorn
 
-#Design:
+#### Design:
 * Vitor Daniel Dos Santos
