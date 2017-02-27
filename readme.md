@@ -20,11 +20,9 @@ Back-end:
 * [MongoDB](https://www.mongodb.com/)
 * [Mongoose](http://mongoosejs.com/)
 
-
-
-#### Desenvolvimento:
+## Desenvolvimento:
 * Matheus Blödorn
 * Felipe Souza Goertmann
 
-#### Design:
+## Design:
 * Vitor Daniel Dos Santos
