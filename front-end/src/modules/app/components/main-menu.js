@@ -29,7 +29,7 @@ class MainMenu extends Component{
                 {this.renderMenuItem(pets)}
                 {this.renderDropdown(register)}
 
-                <Menu.Menu position='right'>
+                <Menu.Menu stackable position='right'>
                     {this.renderMenuItem(login)}
                     {this.renderMenuItem(signup)}
                 </Menu.Menu>
