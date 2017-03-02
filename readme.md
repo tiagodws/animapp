@@ -8,8 +8,6 @@ Animapp é uma plataforma online e open-source criada em favor da causa animal. 
 
 ## Quais tecnologias estão sendo utilizadas?
 
-OBS: Não estamos considerando as dev-dependencies
-
 Front-end:
 * [React](https://facebook.github.io/react/)
 * [Redux](http://redux.js.org/)
