@@ -5,6 +5,8 @@
 Animapp é uma plataforma online e open-source criada em favor da causa animal. Através desta plataforma você poderá adotar um pet, se cadastrar como lar temporário ou fazer doações para animais em necessidade. Se você encontrou um pet abandonado e precisa de ajuda, você também pode cadastra-lo na plataforma. 
 
 ![Mascote](http://i.imgur.com/HYRreHI.png)
+![Tela1](http://i.imgur.com/GskS6NH.png)
+![Tela2](http://i.imgur.com/XDa192l.png)
 
 ## Quais tecnologias estão sendo utilizadas?
 
