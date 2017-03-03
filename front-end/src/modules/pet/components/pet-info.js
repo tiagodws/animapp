@@ -5,7 +5,7 @@ class PetInfo extends Component{
     render(){
         const {pet} = this.props;
         return(
-
+            <div>pet info</div>
         )
     }
 }

@@ -2,6 +2,7 @@ import React, {Component, PropTypes} from 'react';
 import {Grid, Form, Divider, Checkbox, Image, Button} from 'semantic-ui-react';
 import ScreenHeader from '../../../components/screen-header';
 import ScreenDescription from '../../../components/screen-description';
+import ImageUploader from '../../../components/image-uploader';
 
 export default class PetNew extends Component{
 
@@ -43,7 +44,7 @@ export default class PetNew extends Component{
                                 <Form.Field control={Checkbox} label={<label>Vermifugado</label>}/>
                             </Form.Group>
                             <Form.Group>
-                                <Button>Adicionar foto</Button>
+                                <ImageUploader/>
                                 <Image.Group size='tiny'>
                                 </Image.Group>
                             </Form.Group>
