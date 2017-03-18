@@ -28,7 +28,7 @@ Back-end:
 
 ### Front-end:
 
-Basta clonar o repositório e executar o comando `npm install` no diretório [front-end](/frontend). Após a instalação de todos os pacotes execute o comando `npm start` e acesse o link `http://localhost:8080` (ou a porta que você configurar) para acessar o aplicativo.
+Basta clonar o repositório e executar o comando `npm install` no diretório [front-end](https://github.com/mblodorn/animapp/tree/dev/front-end). Após a instalação de todos os pacotes execute o comando `npm start` e acesse o link `http://localhost:8080` (ou a porta que você configurar) para acessar o aplicativo.
 
 ### Back-end:
 
